@@ -10,7 +10,7 @@
     <title>Blog Template · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
     <!-- Bootstrap core CSS -->
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
-       <a class="link-secondary" href="#"> Panier <span class="badge badge-pill badge bg-secondary">{{ Cart::count() }}</span></a >
+       <a class="link-secondary" href="{{route('cart.index')}}"> Panier <span class="badge badge-pill badge bg-secondary">{{ Cart::count() }}</span></a >
       </div>
       <div class="col-4 text-center">
          <h1>E-Commerce</h1> 
@@ -172,29 +172,12 @@ h1, h2, h3, h4, h5, h6 {
     </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">World</a>
-      <a class="p-2 link-secondary" href="#">U.S.</a>
-      <a class="p-2 link-secondary" href="#">Technology</a>
-      <a class="p-2 link-secondary" href="#">Design</a>
-      <a class="p-2 link-secondary" href="#">Culture</a>
-      <a class="p-2 link-secondary" href="#">Business</a>
-      <a class="p-2 link-secondary" href="#">Politics</a>
-      <a class="p-2 link-secondary" href="#">Opinion</a>
-      <a class="p-2 link-secondary" href="#">Science</a>
-      <a class="p-2 link-secondary" href="#">Health</a>
-      <a class="p-2 link-secondary" href="#">Style</a>
-      <a class="p-2 link-secondary" href="#">Travel</a>
-    </nav>
-  </div>
-</div>
 @if (session('success'))
     <div class="alert alert-success text-center">
       {{session('success')}}
     </div>
 @endif
-<main class="container">
+//<main class="container">
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
@@ -206,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   <div class="row mb-2">
     @yield('content')
     
-</div>
+//</div>
 
 </main><!-- /.container -->
 --} 

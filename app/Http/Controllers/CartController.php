@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        return view('cart.index');
     }
 
     /**
@@ -42,7 +42,7 @@ class CartController extends Controller
         });
 
         if ($duplicate->isNotEmpty()) {
-            return redirect()->route('produit.index')->with('success','le produit a déjàen  été  ajouter.');
+            return redirect()->route('produit.index')->with('success','le produit a déjà en  été  ajouter.');
 
         }
         $produit = Produit::find($request->produit_id);
@@ -92,8 +92,9 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($rowId)
     {
-        //
+        Cart::remove($rowId);
+        return back()->with('success', 'le produit a été supprimé.');
     }
 }

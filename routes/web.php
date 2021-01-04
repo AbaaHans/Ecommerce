@@ -21,10 +21,9 @@ Route::get('/boutique', 'ProduitController@index')->name('produit.index');
 Route::get('/boutique/{slug}', 'ProduitController@show')->name('produit.show');
 
 //Route de la cart
-
+Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter', 'CartController@store')->name('cart.store');
-
-
+Route::get('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
 Route::get('/videpanier', function() {
     Cart::destroy();
 });
